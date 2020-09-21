@@ -7,7 +7,7 @@ def get_bot_response(user_response):
     bot_response_bad = ['Just a bad game!', 'You will do better in the next one!', 'Put it behind you and do better in the next one!',
     'Don\'t stress it!']
 
-    #A if/else statement for the bot to see which input the user done
+    #An if/else statement for the bot to see which input the user done
     if user_response == "good":
         return choice(bot_response_good)
     elif user_response == "bad":
@@ -16,17 +16,22 @@ def get_bot_response(user_response):
         return "You're gonna do great in the next game!"
 
 print("Hi, welcome to PostGame Bot!")
+print("---------------------------")
+print("The purpose of this bot is to inform the bot on how your last game went.")
+print("Once you enter that it went 'good' or it went 'bad' then the bot will respond with some reassurance!")
+print("---------------------------")
 
 #Declaring the user_response variable to use in the future
 user_response = " "
 
-#Setting up a loop until the user enters a value
+#Setting up a loop for the user to put their answer until they are done running the program
 while True:
     user_response = input("How did your last game go??:  ")
 
     if user_response == "quit":
         break
-
+    #Display the bot response after the user hits enter
     bot_response = get_bot_response(user_response)
     print(bot_response)
+    print("-------------------")
 
